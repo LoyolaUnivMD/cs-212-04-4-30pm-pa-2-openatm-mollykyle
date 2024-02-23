@@ -1,0 +1,100 @@
+1. Make Account class{
+  initialize data fields
+     -private String accountNumbersArray (double array?)
+     -private String name
+     -private String accountNumber
+     -private String pastTransactionsArray
+     -private String statisticsArray
+
+
+//isOwner
+-if account number is in array
+    -return accountNumber
+-else if account number is not there and there are spaces
+    -add accountNumber to array of accountNumbersArray
+-else
+    -output that there's no space
+    -ask for name/exit again
+
+
+//display account number method
+-output account number
+
+
+//deposit method
+-currentBalance += amountDepositing
+
+
+//withdraw method
+-currentBalance += amountWithdrawing
+
+
+//getStats method
+-initialize statsArray
+-add currentBalance to statisticsArray
+-run through array
+    -set min
+    -add min to statisticsArray
+-run through array
+    -set max
+    -add max to array
+
+-run through array
+    -add all numbers in pastTransactions array together
+    -divide by length and find average of transactions
+    -add to statisticsArray
+
+
+//view recent transactions method (display?)
+-run through array and print out each
+
+
+//menuErrorCheck method
+-while choice is not 1,2,3,4 05 5:
+    -output invalid input
+    -choice = new input
+
+//numberErrorCheck method
+-while number is not a number and less that zero
+    -output invalid input
+    -number = new input
+
+//display method
+-output name
+-output balance
+-output stats array
+
+}//end of account class
+
+
+//Main Class{
+
+    //MAIN METHOD{
+    2. ask for either name or exit
+    3. while choice not exit:
+        -Get account number
+        -call isOwner method
+        -output account number
+
+        -print account number
+        -get userChoice with "What would you like to do deposit(1), withdraw(2), get stats(3), view recent transactions (4), or leave (5)"
+        -userChoice = call menuErrorCheck
+        -while the userChoice is not "5"
+            -if userChoice == "1"
+                -ask for amountDepositing
+                -call numberErrorCheck method
+                -call desposit method
+            -else if userChoice == "2"
+                -call numberErrorCheck method
+                -ask for amountWithdrawing
+                -call withdraw method
+            -else if userChoice == "3"
+                -call getStats method
+            -else
+                -call recentTransactions method
+            -call display method
+
+        -Ask for name or exit again
+
+        }//end of main
+}//end of Main class
