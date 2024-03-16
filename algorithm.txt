@@ -1,100 +1,89 @@
 1. Make Account class{
   initialize data fields
-     -private String accountNumbersArray (double array?)
-     -private String name
-     -private String accountNumber
-     -private String pastTransactionsArray
-     -private String statisticsArray
+     -public String name
+     -public double[] pastTransactionsArray
+     -public int currentTransactions
+     -public double balance
 
-
-//isOwner
--if account number is in array
-    -return accountNumber
--else if account number is not there and there are spaces
-    -add accountNumber to array of accountNumbersArray
--else
-    -output that there's no space
-    -ask for name/exit again
-
-
-//display account number method
--output account number
-
+//create constructors
 
 //deposit method
--currentBalance += amountDepositing
+-balance += amount
 
 
 //withdraw method
--currentBalance += amountWithdrawing
+-balance -= amount
 
 
 //getStats method
--initialize statsArray
--add currentBalance to statisticsArray
--run through array
-    -set min
-    -add min to statisticsArray
--run through array
-    -set max
-    -add max to array
-
+-initialize variables
+-scan current array
+    - find min and max
 -run through array
     -add all numbers in pastTransactions array together
     -divide by length and find average of transactions
-    -add to statisticsArray
 
 
-//view recent transactions method (display?)
--run through array and print out each
+//update transactions method
+-check index of currentTransactions and based on that place in pastTransactionsArray with correct index
 
+//view recent transactions method
+-run through pastTransactionsArray and print out each value
 
-//menuErrorCheck method
--while choice is not 1,2,3,4 05 5:
-    -output invalid input
-    -choice = new input
-
-//numberErrorCheck method
--while number is not a number and less that zero
-    -output invalid input
-    -number = new input
-
-//display method
--output name
--output balance
--output stats array
 
 }//end of account class
 
 
-//Main Class{
+//ATM Class{
 
     //MAIN METHOD{
-    2. ask for either name or exit
-    3. while choice not exit:
-        -Get account number
-        -call isOwner method
-        -output account number
+    -Initialize account object
+    -import scanner
+    -ask user for name
+    -while choice not exit:
+        -set current account as null/empty
+        -set found as false
+        -run through accounts object
+            -if the account isn't null and the name is found
+                -set the currentaccount as account found
+                -set found as true
+        -if not found
+            -run through the accounts object
+                -if the accounts at an index is null
+                    -create a new account with user info
+                    -set as currentAccount
+        -else if currentAccount is null output no space
 
-        -print account number
         -get userChoice with "What would you like to do deposit(1), withdraw(2), get stats(3), view recent transactions (4), or leave (5)"
-        -userChoice = call menuErrorCheck
-        -while the userChoice is not "5"
-            -if userChoice == "1"
-                -ask for amountDepositing
-                -call numberErrorCheck method
+        -while choice is not 1,2,3,4 05 5:
+            -output invalid input
+            -choice = new input
+
+        -while the choice is not "5"
+            -if choice == "1"
+                -ask for amount depositing
+                    -while number is not a number and less than zero
+                          -output invalid input
+                          -number = new input
                 -call desposit method
-            -else if userChoice == "2"
-                -call numberErrorCheck method
-                -ask for amountWithdrawing
+                -call updateTransactions method
+            -else if choice == "2"
+                -ask for amount withdrawing
+                -while number is not a number and less than zero
+                    -output invalid input
+                    -number = new input
                 -call withdraw method
-            -else if userChoice == "3"
+                -call updateTransactions method
+            -else if choice == "3"
                 -call getStats method
-            -else
+            -else if choice == "4"
                 -call recentTransactions method
-            -call display method
+            -else
+                -print ("invalid choice")
+
+            -Ask for choice again
 
         -Ask for name or exit again
-
-        }//end of main
+        }//end of while
+    }//end of main
 }//end of Main class

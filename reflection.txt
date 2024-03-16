@@ -1,0 +1,14 @@
+I think the most challenging thing I experienced was just trying to figure out what the problem was asking of me.
+Originally I had this idea that the user was going to put their name and their user number, and we would have to
+have an array of both numbers and names and somehow have to scan through that to see if the person existed. While
+now that could be done as we learned multidimensional arrays before it was confusing. The other thing that I thought was
+difficult was thinking about how to check if someone is in array and then how to see if an array is empty and then being
+able to add the user into that array. I actually went to tutoring and this helped me a lot because they went over what null
+if and gave me a chance to talk about how I think it should be done and then how that's implemented in code. It was
+extremely helpful to build on a lab I already knew as not only did it cut down coding time, I could think less about
+some of the more basic java information because I had already worked that out in the past. I think I am becoming more
+comfortable with classes but also there is still some confusion in regard to how to call and name some things, my brain
+has had a really hard time adjusting to java coding from python. Like I know what I want to do, or how you would code it,
+however, being able to immediately understand how to correctly implement it in java code, with all the rules and specific
+syntax I still find difficult. I feel much better about arrays now, I get how to loop through them and manipulate them
+much more than a few weeks ago.
